@@ -2,13 +2,13 @@
 /**
  * Copyright © Swarming Technology, LLC. All rights reserved.
  */
-namespace Buzzi\PublishCartPurchase\Model;
+namespace Buzzi\PublishOrderUpdate\Model;
 
 use Magento\Framework\DataObject;
 
 class DataBuilder
 {
-    const EVENT_TYPE = 'buzzi.ecommerce.cart-purchase';
+    const EVENT_TYPE = 'buzzi.ecommerce.order-update';
 
     /**
      * @var \Buzzi\Publish\Helper\DataBuilder\Base
@@ -81,6 +81,7 @@ class DataBuilder
         $quote = $this->cartRepository->get($order->getQuoteId());
 
         $payload = $this->dataBuilderBase->initBaseData(self::EVENT_TYPE);
+        $payload['status'] = $order->getStatus();
         $payload['customer'] = $this->getCustomerData($order);
         $payload['cart'] = $this->dataBuilderCart->getCartData($quote, $order);
         $payload['cart']['cart_items'] = $this->dataBuilderCart->getCartItemsData($quote);
@@ -96,7 +97,7 @@ class DataBuilder
         }
 
         $transport = new DataObject(['order' => $order, 'payload' => $payload]);
-        $this->eventDispatcher->dispatch('buzzi_publish_cart_purchase_payload', ['transport' => $transport]);
+        $this->eventDispatcher->dispatch('buzzi_publish_order_update_payload', ['transport' => $transport]);
 
         return (array)$transport->getData('payload');
     }

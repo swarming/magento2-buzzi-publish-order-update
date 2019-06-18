@@ -5,4 +5,4 @@
 
 use Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Buzzi_PublishCartPurchase', __DIR__);
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Buzzi_PublishOrderUpdate', __DIR__);

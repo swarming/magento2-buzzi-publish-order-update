@@ -6,9 +6,9 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Buzzi_Publish:etc/publish_events.xsd">
     <buzzi>
-        <publish_event code="cart_purchase">
-            <label>Cart Purchase</label>
-            <type>buzzi.ecommerce.cart-purchase</type>
+        <publish_event code="order_update">
+            <label>Order Update</label>
+            <type>buzzi.ecommerce.order-update</type>
         </publish_event>
     </buzzi>
 </config>

@@ -1,8 +1,8 @@
 {
-  "name": "swarming/magento2-buzzi-publish-cart-purchase",
-  "description": "Magento 2 Buzzi.io Publish Cart Purchase",
+  "name": "swarming/magento2-buzzi-publish-order-update",
+  "description": "Magento 2 Buzzi.io Publish Order Update",
   "type": "magento2-module",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "license": ["proprietary"],
   "authors": [
     {
@@ -16,7 +16,7 @@
   "autoload": {
     "files": ["registration.php"],
     "psr-4": {
-      "Buzzi\\PublishCartPurchase\\": ""
+      "Buzzi\\PublishOrderUpdate\\": ""
     }
   }
 }
