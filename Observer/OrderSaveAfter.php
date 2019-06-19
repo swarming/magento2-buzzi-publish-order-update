@@ -8,7 +8,7 @@ use Magento\Framework\App\ObjectManager;
 use Magento\Framework\Event\Observer;
 use Buzzi\PublishOrderUpdate\Model\DataBuilder;
 
-class   OrderSaveAfter implements \Magento\Framework\Event\ObserverInterface
+class OrderSaveAfter implements \Magento\Framework\Event\ObserverInterface
 {
     /**
      * @var \Buzzi\Publish\Model\Config\Events
@@ -21,7 +21,7 @@ class   OrderSaveAfter implements \Magento\Framework\Event\ObserverInterface
     private $queue;
 
     /**
-     * @var \Buzzi\PublishCartPurchase\Model\DataBuilder
+     * @var \Buzzi\PublishOrderUpdate\Model\DataBuilder
      */
     private $dataBuilder;
 
@@ -33,13 +33,13 @@ class   OrderSaveAfter implements \Magento\Framework\Event\ObserverInterface
     /**
      * @param \Buzzi\Publish\Model\Config\Events $configEvents
      * @param \Buzzi\Publish\Api\QueueInterface $queue
-     * @param \Buzzi\PublishCartPurchase\Model\DataBuilder $dataBuilder
+     * @param \Buzzi\PublishOrderUpdate\Model\DataBuilder $dataBuilder
      * @param \Buzzi\Publish\Helper\AcceptsMarketing|null $acceptsMarketingHelper
      */
     public function __construct(
         \Buzzi\Publish\Model\Config\Events $configEvents,
         \Buzzi\Publish\Api\QueueInterface $queue,
-        \Buzzi\PublishCartPurchase\Model\DataBuilder $dataBuilder,
+        \Buzzi\PublishOrderUpdate\Model\DataBuilder $dataBuilder,
         \Buzzi\Publish\Helper\AcceptsMarketing $acceptsMarketingHelper = null
     ) {
         $this->configEvents = $configEvents;
